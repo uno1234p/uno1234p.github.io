@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Uno Ridfot - Premium Edition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="mainMenu">
+        <div class="menu-title">UNO 2,3,4 ORANG</div>
+        
+        <div class="setup-card">
+            <div class="setup-group">
+                <label>JUMLAH PEMAIN</label>
+                <select id="selectPlayers">
+                    <option value="2">2 Pemain (1 VS 1)</option>
+                    <option value="3">3 Pemain (1 VS 2)</option>
+                    <option value="4" selected>4 Pemain (1 VS 3)</option>
+                </select>
+            </div>
+
+            <div class="setup-group">
+                <label>JUMLAH KARTU AWAL</label>
+                <select id="selectCards">
+                    <option value="5">5 Kartu (Cepat)</option>
+                    <option value="7" selected>7 Kartu (Standar)</option>
+                    <option value="10">10 Kartu (Lama)</option>
+                </select>
+            </div>
+
+            <div class="setup-group">
+                <label>MODE KARTU</label>
+                <select id="selectMode">
+                    <option value="normal" selected>MODE NORMAL</option>
+                    <option value="flip">MODE FLIP (BOLAK-BALIK)</option>
+                    <option value="nomercy">MODE NO MERCY (+25, +30, +100)</option>
+                </select>
+            </div>
+
+            <button class="menu-btn-start" onclick="processStart()">MULAI PERMAINAN</button>
+        </div>
+    </div>
+
+    <div id="scoreMenu" style="display: none;">
+        <div class="score-box">
+            <h1 class="gold-txt" style="margin-top:0">HASIL GAME</h1>
+            <div id="scoreList"></div>
+            <div class="menu-btn" style="margin-top: 30px; width: 100%; box-sizing: border-box;" onclick="backToRealMenu()">MENU UTAMA</div>
+        </div>
+    </div>
+
+    <div id="table" style="display: none;">
+        <div id="gameNotif"></div>
+        
+        <div id="stackInfo" style="display: none;"></div>
+        
+        <div id="colorPicker" style="display: none;">
+            <div class="pick red" onclick="chooseColor('red')"></div>
+            <div class="pick blue" onclick="chooseColor('blue')"></div>
+            <div class="pick green" onclick="chooseColor('green')"></div>
+            <div class="pick yellow" onclick="chooseColor('yellow')"></div>
+        </div>
+
+        <div class="rotation-path">
+            <div id="pointer"></div>
+        </div>
+
+        <div class="piles">
+            <div id="deck" class="box" onclick="draw()"></div>
+            <div id="topCard" class="box"></div>
+        </div>
+
+        <div id="ui"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
